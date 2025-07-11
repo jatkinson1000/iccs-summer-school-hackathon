@@ -60,3 +60,7 @@ OBJ_MPI =
 # NetCDF (only required for Lorenz96)
 NC_LIB   = -L/usr/lib/x86_64-linux-gnu -lnetcdff -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -lnetcdf -lnetcdf -lm
 NC_INC   = -I/usr/include 
+
+# Ftorch
+FT_LIB = -L/home/user/Dokumente/ICCS/Hackathon/FTorch/bin/lib -lftorch
+FT_INC = -I/home/user/Dokumente/ICCS/Hackathon/FTorch/bin/include
