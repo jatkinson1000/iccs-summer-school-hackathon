@@ -23,6 +23,14 @@ ported to Fortran for use with PDAF using
 
 *Work in progress*
 
+### Python dependencies
+
+After having created a [virtual environment](https://docs.python.org/3/tutorial/venv.html), say at `.venv`, activate it with `source .venv/bin/activate` and install the python dependencies for the project with:
+```shell
+(.venv) pip install . -v
+```
+or by preprending `uv` if using uv.
+
 ## Running the code
 
 *Work in progress*
