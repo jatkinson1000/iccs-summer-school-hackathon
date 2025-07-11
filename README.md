@@ -2,12 +2,12 @@
 
 This repository is a contribution to the 2025 ICCS summer school hackathon by
 the following participants:
-* Nabir Mamnun @nmamnun
-* Niccolò Zanotti @niccolozanotti
-* Viktoriia Hrytsyna @V-H-Reads
-* Jack Atkinson @jatkinson1000
-* Joe Wallwork @jwallwork23
-* Sam Avis @sjavis
+* Nabir Mamnun [@nmamnun](https://github.com/nmamnun)
+* Niccolò Zanotti [@niccolozanotti](https://github.com/niccolozanotti)
+* Viktoriia Hrytsyna [@V-H-Reads](https://github.com/V-H-Reads)
+* Jack Atkinson [@jatkinson1000](https://github.com/jatkinson1000)
+* Joe Wallwork [@jwallwork23](https://github.com/jwallwork23)
+* Sam Avis [@sjavis](https://github.com/sjavis)
 
 ## Project overview
 
