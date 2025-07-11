@@ -8,3 +8,11 @@ the following participants:
 * Jack Atkinson @jatkinson1000
 * Joe Wallwork @jwallwork23
 * Sam Avis @sjavis
+
+The repository uses the [PDAF](https://pdaf.awi.de) data assimilation framework
+to perform data assimilation on the Lorenz ‘96 model in the context of a machine
+learning based surrogate model.
+Observations are generated using a Python implementation of the model.
+The surrogate model is written in [PyTorch](https://pytorch.org/) and this is
+ported to Fortran for use with PDAF using
+[FTorch](https://cambridge-iccs.github.io/FTorch/).
