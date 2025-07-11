@@ -16,7 +16,7 @@ import torch
 import torch.utils.data as Data
 from torch import nn, optim
 
-from L96_model import L96, RK2, RK4, EulerFwd, L96_eq1_xdot, integrate_L96_2t
+from L96_model import L96
 
 # Ensuring reproducibility
 np.random.seed(14)
