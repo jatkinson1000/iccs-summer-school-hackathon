@@ -28,7 +28,7 @@ CPP = /usr/bin/cpp
 # Define PDAF_NO_UPDATE to deactivate the analysis step of the filter
 # (if the compiler does not support get_command_argument()
 # from Fortran 2003 you should define F77 here.)
-CPP_DEFS = -DUSE_PDAF
+CPP_DEFS =# -DUSE_PDAF
 
 # Optimization specs for compiler
 # To use OpenMP parallelization in PDAF, specify it here (-fopenmp (gfortran) or -openmp (ifort))
@@ -58,5 +58,9 @@ MPI_INC =
 OBJ_MPI =
 
 # NetCDF (only required for Lorenz96)
-NC_LIB   =
-NC_INC   =
+NC_LIB   = $(shell nf-config --flibs)
+NC_INC   = $(shell nf-config --fflags)
+
+# Ftorch
+FT_LIB = -L${FTORCH_BUILD_DIR}/bin/lib -lftorch
+FT_INC = -I${FTORCH_BUILD_DIR}/bin/include
