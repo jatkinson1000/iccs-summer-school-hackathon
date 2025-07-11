@@ -30,7 +30,10 @@ After having created a [virtual environment](https://docs.python.org/3/tutorial/
 ```shell
 (.venv) pip install -e . 
 ```
-or by preprending `uv` if using [uv](https://github.com/astral-sh/uv).
+or by prepending `uv` if using [uv](https://github.com/astral-sh/uv).
+
+You will also need to install PyTorch, following the instructions at
+[PyTorch installation](https://pytorch.org/get-started/locally/).
 
 ## Running the code
 
