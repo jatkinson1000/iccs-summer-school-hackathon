@@ -27,7 +27,7 @@ ported to Fortran for use with PDAF using
 
 After having created a [virtual environment](https://docs.python.org/3/tutorial/venv.html), say at `.venv`, activate it with `source .venv/bin/activate` and install the python dependencies for the project with:
 ```shell
-(.venv) pip install . -v
+(.venv) pip install -e . 
 ```
 or by preprending `uv` if using uv.
 
