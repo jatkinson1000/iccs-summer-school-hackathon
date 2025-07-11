@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Jupyter Notebooks
+*.ipynb_checkpoints/
+# Virtual environments
+.venv/
+venv/
+
+# Ruff 
+.ruff_cache/
+*.py.bak
+
+# non pylock.toml locks
+uv.lock
+Pipfile.lock
+
+# Apple Desktop Storage
+**.DS_Store
+**.DS_Store?
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
