@@ -58,6 +58,10 @@ every command:
 export PDAF_ARCH=linux_gfortran
 ```
 
+You will also need to provide the path to the FTorch build:
+```bash
+export FTORCH_BUILDDIR=/path/to/ftorch/build
+```
 
 ## Running the model
 
