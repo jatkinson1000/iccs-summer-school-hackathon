@@ -58,9 +58,9 @@ MPI_INC =
 OBJ_MPI =
 
 # NetCDF (only required for Lorenz96)
-NC_LIB   = -L/usr/lib/x86_64-linux-gnu -lnetcdff -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -Wl,-z,now -lnetcdf -lnetcdf -lm
-NC_INC   = -I/usr/include 
+NC_LIB   = $(shell nf-config --flibs)
+NC_INC   = $(shell nf-config --fflags)
 
 # Ftorch
-FT_LIB = -L/home/user/Dokumente/ICCS/Hackathon/FTorch/bin/lib -lftorch
-FT_INC = -I/home/user/Dokumente/ICCS/Hackathon/FTorch/bin/include
+FT_LIB = -L${FTORCH_BUILD_DIR}/bin/lib -lftorch
+FT_INC = -I${FTORCH_BUILD_DIR}/bin/include
