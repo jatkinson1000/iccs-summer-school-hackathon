@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 
+"""
+L96_training.py
+
+This script trains a neural network to emulate the subgrid tendencies in the Lorenz-96
+(L96) model. It generates data using the two-timescale L96 model, and uses this to train
+a fully connected neural network to predict the subgrid tendencies. The trained model is
+saved as a TorchScript file for later use.
+"""
+
 import time
 
 import numpy as np
@@ -55,6 +64,14 @@ loss_fn = torch.nn.MSELoss()
 
 # Define the network
 class NonLocal_FCNN(nn.Module):
+    """
+    Fully Connected Neural Network for emulating nonlocal subgrid tendencies in the L96 model.
+
+    Architecture:
+        - Input layer: 8 features (resolved variables)
+        - Hidden layers: 2 layers with 16 neurons each, ReLU activation
+        - Output layer: 8 features (subgrid tendencies)
+    """
     def __init__(self):
         super().__init__()
         self.linear1 = nn.Linear(8, 16)  # 8 inputs
@@ -64,6 +81,15 @@ class NonLocal_FCNN(nn.Module):
         self.relu = nn.ReLU()
 
     def forward(self, x):
+        """
+        Forward pass through the network.
+
+        Args:
+            x (torch.Tensor): Input tensor of shape (batch_size, 8)
+
+        Returns:
+            torch.Tensor: Output tensor of shape (batch_size, 8)
+        """
         x = self.relu(self.linear1(x))
         x = self.relu(self.linear2(x))
         x = self.linear3(x)
@@ -78,7 +104,18 @@ optimizer_nonlocal_fcnn = optim.Adam(
 )
 
 def train_model(network, criterion, loader, optimizer):
-    """Train the network for one epoch"""
+    """
+    Train the network for one epoch
+    
+    Args:
+        network (nn.Module): The neural network to train.
+        criterion (nn.Module): Loss function.
+        loader (DataLoader): DataLoader for training data.
+        optimizer (torch.optim.Optimizer): Optimizer for updating network weights.
+
+    Returns:
+        float: Average training loss for the epoch.
+    """
     network.train()
 
     train_loss = 0
@@ -105,7 +142,17 @@ def train_model(network, criterion, loader, optimizer):
     return train_loss / len(loader)
 
 def test_model(network, criterion, loader):
-    """Test the network"""
+    """
+    Evaluate the neural network on the test dataset.
+
+    Args:
+        network (nn.Module): The neural network to evaluate.
+        criterion (nn.Module): Loss function.
+        loader (DataLoader): DataLoader for test data.
+
+    Returns:
+        float: Average test loss.
+    """
     network.eval()  # Evaluation mode (important when having dropout layers)
 
     test_loss = 0
@@ -129,7 +176,20 @@ def test_model(network, criterion, loader):
     return test_loss
 
 def fit_model(network, criterion, optimizer, train_loader, test_loader, n_epochs):
-    """Train and validate the network"""
+    """
+    Train and validate the neural network for a specified number of epochs.
+
+    Args:
+        network (nn.Module): The neural network to train.
+        criterion (nn.Module): Loss function.
+        optimizer (torch.optim.Optimizer): Optimizer for updating network weights.
+        train_loader (DataLoader): DataLoader for training data.
+        test_loader (DataLoader): DataLoader for test data.
+        n_epochs (int): Number of training epochs.
+
+    Returns:
+        tuple: (list of training losses, list of test losses)
+    """
     train_losses, test_losses = [], []
     start_time = time.time()
     for epoch in range(1, n_epochs + 1):
