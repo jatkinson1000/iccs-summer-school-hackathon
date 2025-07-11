@@ -22,6 +22,7 @@ ported to Fortran for use with PDAF using
 ## Installation
 
 *Work in progress*
+See the [PDAF instructions](./pdaf-code/README.md)
 
 ## Running the code
 
