@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = []
+
+[project]
+name = "iccs-summer-school-hackathon"
+version = "0.1"
+description = "ICCS Summer School 2025 Hackathon"
+readme = "README.md"
+authors = [
+    { name = "Nabir Mamnun" },
+    { name = "Niccolò Zanotti"},
+    { name = "Jack Atkinson"},
+    { name = "Viktoriia Hrytsyna"},
+    { name = "Joe Wallwork"},
+    { name = "Sam Avis"},
+]
+requires-python = ">=3.11"
+dependencies = [
+    "numba>=0.61.2",
+    "numpy",
+]
