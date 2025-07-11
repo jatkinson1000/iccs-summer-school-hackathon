@@ -29,7 +29,7 @@ After having created a [virtual environment](https://docs.python.org/3/tutorial/
 ```shell
 (.venv) pip install -e . 
 ```
-or by preprending `uv` if using uv.
+or by preprending `uv` if using [uv](https://github.com/astral-sh/uv).
 
 ## Running the code
 

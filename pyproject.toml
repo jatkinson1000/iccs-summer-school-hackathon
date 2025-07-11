@@ -13,7 +13,6 @@ readme = "README.md"
 authors = [
     { name = "Nabir Mamnun" },
     { name = "Niccolò Zanotti"},
-    { name = "Viktoriia Hrytsyna"},
     { name = "Jack Atkinson"},
     { name = "Viktoriia Hrytsyna"},
     { name = "Joe Wallwork"},
