@@ -65,3 +65,35 @@ The model can now be run for the desired number of timesteps with:
 ```bash
 ./lorenz_96 -total_steps 10
 ```
+
+
+## Building the data assimilative model (Lorenz 96 + PDAF)
+
+Now edit the file make.arch/linux_gfortran.h again and back to 
+```bash
+CPP_DEFS = -DUSE_PDAF
+```
+It will activate coupling of PDAF in the model code.
+
+Navigate to the model directory:
+```bash
+cd models/lorenz96/
+```
+
+Now compile the Lorenz-96 model with activated coupling to PDAF. First remove the binary files from the previous compilation using
+```bash
+make clean PDAF_ARCH=linux_gfortran
+```
+  
+Then build the assimilative model using
+```bash
+make pdaf_lorenz_96 PDAF_ARCH=linux_gfortran
+```
+Now you should have a executable file pdaf_lorenz_96 and can run the data assimilation
+
+## Running the data assimilative model (Lorenz 96 + PDAF)
+
+```bash
+./pdaf_lorenz_96 -total_steps 5000 -step_null 1000 -dim_ens 30
+```
+So we run the model for 5000 time steps and we start assimilation at 1000 time steps for 30 ensemble members. You can change the configuration with these command line arguments or from a namelist. 
